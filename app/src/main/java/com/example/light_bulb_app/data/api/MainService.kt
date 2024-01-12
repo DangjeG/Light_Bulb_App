@@ -8,34 +8,35 @@ import retrofit2.http.POST
 import retrofit2.http.Query
 
 interface MainService {
+
+    @POST("state/on/")
     suspend fun onLamp(): Response<Boolean>
 
-    @POST("/state/off")
+    @POST("state/off")
     suspend fun offLamp():  Response<Boolean>
 
-    @GET("/state")
+    @GET("state/")
     suspend fun getState():  Response<Boolean>
 
-    @GET("/color")
+    @GET("color/")
     suspend fun getColors(): Response<List<Color>>
 
-    @POST("/color")
+    @POST("color/")
     suspend fun setColor(
         @Query("color") color: String
     ): Response<Boolean>
 
-    @GET("/color/current")
+    @GET("color/current")
     suspend fun getColor(): Response<Color>
 
-    @GET("/brightness")
+    @GET("brightness/")
     suspend fun getBrightnessLevels(): Response<BrightnessLevels>
 
-    @POST("/brightness")
+    @POST("brightness/")
     suspend fun setBrightness(
         @Query("level") level: Int
     ): Response<Boolean>
 
-    @GET("/brightness/current")
+    @GET("brightness/current")
     suspend fun getBrightness(): Response<Int>
-
 }

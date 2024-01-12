@@ -76,6 +76,8 @@ class MainFragment : Fragment(R.layout.fragment_main) {
         viewModel.loadBrightnessLevels()
         viewModel.loadColors()
         viewModel.loadState()
+        viewModel.loadColor()
+        viewModel.loadBrightness()
 
     }
 
@@ -97,7 +99,7 @@ class MainFragment : Fragment(R.layout.fragment_main) {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         binding.colorsDropdown.setAdapter(adapter)
         binding.colorsDropdown.setOnItemClickListener { adapterView, _, i, _ ->
-            val item: String = adapterView.getItemIdAtPosition(i).toString()
+            val item: String = adapterView.getItemAtPosition(i).toString()
             viewModel.setColor(item)
             viewModel.loadColor()
         }

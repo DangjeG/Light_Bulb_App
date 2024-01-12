@@ -13,5 +13,5 @@ class OffLampUseCaseImpl @Inject constructor(
 ): OffLampUseCase {
 
     override suspend fun invoke(): Result<Boolean?> =
-        repository.onLamp()
+        repository.offLamp()
 }
