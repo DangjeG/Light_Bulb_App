@@ -2,4 +2,7 @@
     <string name="app_name">Light_Bulb_App</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="on_off">On/Off</string>
+    <string name="set_color">Set Color</string>
+    <string name="set_brightness">Set Brightness</string>
 </resources>

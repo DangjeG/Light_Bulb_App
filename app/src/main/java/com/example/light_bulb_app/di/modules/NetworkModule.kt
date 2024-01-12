@@ -13,7 +13,7 @@ class NetworkModule {
     @Provides
     fun provideSampleService(): MainService =
         Retrofit.Builder()
-            .baseUrl("https://api.frankfurter.app/")
+            .baseUrl("http://195.54.14.121:8086/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(MainService::class.java)
