@@ -72,6 +72,11 @@ class MainFragment : Fragment(R.layout.fragment_main) {
                 is UiState.Success -> setColor(it.value!!)
             }
         }
+
+        viewModel.loadBrightnessLevels()
+        viewModel.loadColors()
+        viewModel.loadState()
+
     }
 
     private fun initializeButton(state: Boolean){
@@ -81,6 +86,8 @@ class MainFragment : Fragment(R.layout.fragment_main) {
         }
         else binding.onOffButton.setOnClickListener{
             viewModel.onLamp()
+            viewModel.loadBrightnessLevels()
+            viewModel.loadColors()
             viewModel.loadState()
         }
     }
